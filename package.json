@@ -1,0 +1,26 @@
+{
+  "name": "fire",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "assemblyscript": "^0.27.2",
+    "assemblyscript-prettier": "^2.0.2",
+    "prettier": "^3.0.0-alpha.6"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "asbuild:debug": "./node_modules/.bin/asc assembly/index.ts --target debug",
+    "asbuild:release": "./node_modules/.bin/asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "test": "node tests",
+    "start": "npx serve .",
+    "prettier": "./node_modules/.bin/prettier --trailing-comma none --write assembly/*.ts"
+  }
+}

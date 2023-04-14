@@ -1,0 +1,29 @@
+{
+  "options": {
+    "bindings": "esm",
+    "runtime": "stub",
+    "use": "Math=JSMath",
+    "importMemory": true,
+    "initialMemory": 17,
+    "sourceMap": true,
+    "measure": true
+  },
+  "targets": {
+    "debug": {
+      "outFile": "build/fire-debug.wasm",
+      "textFile": "build/debug.wat",
+      "sourceMap": true,
+      "debug": true,
+      "noAssert": true
+    },
+    "release": {
+      "outFile": "build/fire.wasm",
+      "textFile": "build/fire.wat",
+      "sourceMap": true,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": true
+    }
+  }
+}
