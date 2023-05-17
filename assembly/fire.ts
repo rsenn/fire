@@ -1,3 +1,5 @@
+//memory.grow(1);
+
 export function fire(width: u16, height: u16): void {
   var p: u32 = 0;
 

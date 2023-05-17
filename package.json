@@ -1,23 +1,23 @@
 {
   "name": "fire",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./assembly/index.ts",
   "license": "MIT",
   "devDependencies": {
-    "assemblyscript": "^0.27.2",
-    "assemblyscript-prettier": "^2.0.2",
-    "prettier": "^3.0.0-alpha.6"
+    "assemblyscript": "^0",
+    "assemblyscript-prettier": "^2",
+    "prettier": "^3"
   },
   "type": "module",
   "exports": {
     ".": {
-      "import": "./build/release.js",
-      "types": "./build/release.d.ts"
+      "import": "./build/fire.js",
+      "types": "./build/fire.d.ts"
     }
   },
   "scripts": {
-    "asbuild:debug": "./node_modules/.bin/asc assembly/index.ts --target debug",
-    "asbuild:release": "./node_modules/.bin/asc assembly/index.ts --target release",
+    "asbuild:debug": "./node_modules/.bin/asc --config asconfig.json assembly/index.ts --target debug",
+    "asbuild:release": "./node_modules/.bin/asc --config asconfig.json assembly/index.ts --target release",
     "asbuild": "npm run asbuild:debug && npm run asbuild:release",
     "test": "node tests",
     "start": "npx serve .",
